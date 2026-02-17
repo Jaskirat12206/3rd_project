@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intel: Sustainability Through the Ages</title>
   <link rel="stylesheet" href="style.css" />
+   <!-- Bootstrap CSS - supports both LTR and RTL when dir attribute is changed -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+   <!-- Bootstrap Icons for visual enhancement -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
 
@@ -26,6 +30,60 @@
       </p>
     </div>
   </header>
+
+  <!-- Bootstrap Carousel - Interactive Sustainability Highlights -->
+  <div id="sustainabilityCarousel" class="carousel slide carousel-section" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#sustainabilityCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#sustainabilityCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#sustainabilityCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    
+    <div class="carousel-inner">
+      <!-- Slide 1: Climate Action -->
+      <div class="carousel-item active">
+        <div class="carousel-content">
+          <div class="carousel-icon">
+            <i class="bi bi-globe2"></i>
+          </div>
+          <h3>Net-Zero by 2040</h3>
+          <p>Intel commits to achieving net-zero greenhouse gas emissions across global operations, leading the semiconductor industry toward a sustainable future.</p>
+        </div>
+      </div>
+      
+      <!-- Slide 2: Renewable Energy -->
+      <div class="carousel-item">
+        <div class="carousel-content">
+          <div class="carousel-icon">
+            <i class="bi bi-lightning-charge"></i>
+          </div>
+          <h3>99% Renewable Electricity</h3>
+          <p>Intel achieved 99% renewable electricity usage worldwide in 2023, powering innovation with clean energy and reducing carbon footprint significantly.</p>
+        </div>
+      </div>
+      
+      <!-- Slide 3: Water Conservation -->
+      <div class="carousel-item">
+        <div class="carousel-content">
+          <div class="carousel-icon">
+            <i class="bi bi-droplet"></i>
+          </div>
+          <h3>Water Restoration</h3>
+          <p>Intel aims to restore 100% of water used back to local communities, achieving net positive water use in water-stressed regions by 2030.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Carousel Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#sustainabilityCarousel" data-bs-slide="prev" aria-label="Previous slide">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#sustainabilityCarousel" data-bs-slide="next" aria-label="Next slide">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
 
   <!-- Timeline Cards Section -->
   <section>
@@ -94,7 +152,7 @@
     <div>
       <h2>2020</h2>
       <h3>RISE Strategy</h3>
-      <img src="https://media.licdn.com/dms/image/D5605AQGJ5L8uLQylGg/feedshare-thumbnail_720_1280/0/1683817516975?e=2147483647&v=beta&t=vG7YS7KDl1ptsg9I-JEzSbazErtXG1puWZNJJK_F4kI" class="card-image" />
+      <img src="https://media.licdn.com/dms/image/D5605AQGJ5L8uLQylGg/feedshare-thumbnail_720_1280/0/1683817516975?e=2147483647&v=beta&t=vG7YS7KDl1ptsg9I-JEzSbazErtXG1puWZNJJK_F4kI" alt="Intel RISE Strategy graphic showing Responsible, Inclusive, Sustainable, and Enabling pillars" class="card-image" />
       <p>
         Intel launches its RISE (Responsible, Inclusive, Sustainable, 
         Enabling) strategy and 2030 goals, aiming to drive industry-wide 
@@ -106,7 +164,7 @@
     <div>
       <h2>2022</h2>
       <h3>Net-Zero By 2040</h3>
-      <img src="https://up.yimg.com/ib/th/id/OIP.2fb8seo31g8BVZcKk1sDSwHaEK?pid=Api&rs=1&c=1&qlt=95&w=177&h=99" class="card-image" />
+      <img src="https://up.yimg.com/ib/th/id/OIP.2fb8seo31g8BVZcKk1sDSwHaEK?pid=Api&rs=1&c=1&qlt=95&w=177&h=99" alt="Net-zero emissions concept showing sustainable environment and clean energy" class="card-image" />
       <p>
         Intel announces its commitment to achieve net-zero greenhouse 
         gas emissions (Scope 1 and 2) across its global operations 
@@ -118,7 +176,7 @@
     <div>
       <h2>2023</h2>
       <h3>Renewable Electricity</h3>
-      <img src="https://up.yimg.com/ib/th/id/OIP.Ig59Ih6c83O_8XOsdvFnjwHaE3?pid=Api&rs=1&c=1&qlt=95&w=154&h=101" class="card-image" />
+      <img src="https://up.yimg.com/ib/th/id/OIP.Ig59Ih6c83O_8XOsdvFnjwHaE3?pid=Api&rs=1&c=1&qlt=95&w=154&h=101" alt="Renewable energy sources including wind turbines and solar panels generating clean electricity" class="card-image" />
       <p>
         The company achieves 99% renewable electricity usage worldwide, 
         helping to drastically lower carbon emissions and driving progress 
@@ -137,7 +195,235 @@
         next-generation sustainable semiconductor manufacturing.
       </p>
     </div>
+
   </section>
-  <footer >Scroll to view timeline | Hover over cards to learn more!</footer>
+
+  <!-- Three Column Info Grid using Bootstrap -->
+  <div class="container text-center mt-5 mb-5">
+    <h2 class="mb-4">Intel's Sustainability Commitment</h2>
+    
+    <!-- Row with 3 columns -->
+    <div class="row">
+      
+      <!-- Column 1: RISE Strategy -->
+      <div class="col-md-4 mb-3">
+        <div class="info-card p-4">
+          <h3><i class="bi bi-rocket-takeoff"></i> RISE Strategy</h3>
+          <p>
+            Under its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy, 
+            Intel sets ambitious 2030 goals, including driving industry-wide 
+            progress on climate action, water stewardship, and waste reduction.
+          </p>
+          <!-- Learn More Button -->
+          <a href="#" class="btn btn-primary mt-3">Learn More</a>
+        </div>
+      </div>
+      
+      <!-- Column 2: Commitment -->
+      <div class="col-md-4 mb-3">
+        <div class="info-card p-4">
+          <h3><i class="bi bi-shield-check"></i> Commitment</h3>
+          <p>
+            In 2022, Intel pledged to achieve net-zero greenhouse gas emissions 
+            (Scope 1 and 2) by 2040. This commitment builds on decades of 
+            environmental initiatives and partnerships across the semiconductor 
+            industry.
+          </p>
+          <!-- Learn More Button -->
+          <a href="#" class="btn btn-primary mt-3">Learn More</a>
+        </div>
+      </div>
+      
+      <!-- Column 3: Water & Waste -->
+      <div class="col-md-4 mb-3">
+        <div class="info-card p-4">
+          <h3><i class="bi bi-droplet-half"></i> Water &amp; Waste</h3>
+          <p>
+            Intel conserves billions of gallons of water annually and 
+            collaborates with local communities to restore watersheds.
+            Intel also upcycles and recycles materials to reduce waste and 
+            advance a circular economy.
+          </p>
+          <!-- Learn More Button -->
+          <a href="#" class="btn btn-primary mt-3">Learn More</a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Subscription Form -->
+  <section class="newsletter-section">
+    <div class="container">
+      <h2>Subscribe to our Newsletter</h2>
+      <p>Stay updated on Intel's sustainability initiatives and innovations</p>
+      
+      <!-- Newsletter Form -->
+      <form class="newsletter-form" aria-label="Newsletter subscription form">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="email-input" class="visually-hidden">Email address</label>
+              <input type="email" id="email-input" name="email" class="form-control" placeholder="Enter your email address" aria-label="Email address" required>
+            </div>
+            <button type="submit" class="btn btn-primary" aria-label="Subscribe to newsletter">Subscribe</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="row">
+        
+        <!-- Footer Navigation Links -->
+        <div class="col-md-6 footer-links">
+          <nav aria-label="Footer navigation">
+            <ul>
+              <li><a href="#privacy" aria-label="Privacy Policy">Privacy Policy</a></li>
+              <li><a href="#terms" aria-label="Terms of Use">Terms of Use</a></li>
+              <li><a href="#contact" aria-label="Contact Intel">Contact</a></li>
+              <li><a href="#accessibility" aria-label="Accessibility Statement">Accessibility</a></li>
+            </ul>
+          </nav>
+        </div>
+        
+        <!-- Copyright Notice -->
+        <div class="col-md-6 footer-copyright">
+          <p>&copy; 2026 Intel Corporation. All rights reserved.</p>
+          <p class="footer-note">Intel, the Intel logo, and other Intel marks are trademarks of Intel Corporation or its subsidiaries.</p>
+        </div>
+        
+      </div>
+      
+      <!-- Footer Helper Text -->
+      <div class="row mt-3">
+        <div class="col-12 text-center footer-help">
+          <p><small>Scroll to view timeline | Hover over cards to learn more!</small></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+   
+   <!-- Auto-Detect Language & Apply RTL Script -->
+   <script>
+     /**
+      * Language Auto-Detection & RTL Layout Adjustment
+      * This script detects when the page language changes (e.g., via Google Translate)
+      * and automatically applies RTL (right-to-left) layout for RTL languages.
+      */
+     
+     // List of RTL language codes
+     const RTL_LANGUAGES = [
+       'ar', // Arabic
+       'he', // Hebrew
+       'fa', // Persian (Farsi)
+       'ur', // Urdu
+       'yi', // Yiddish
+       'ji', // Yiddish (alternative code)
+       'iw', // Hebrew (alternative code)
+       'arc', // Aramaic
+       'dv', // Dhivehi
+       'ku', // Kurdish
+       'ps'  // Pashto
+     ];
+     
+     /**
+      * Check if a language code is RTL
+      * @param {string} lang - Language code (e.g., 'ar', 'en', 'he')
+      * @returns {boolean} - True if language is RTL
+      */
+     function isRTLLanguage(lang) {
+       if (!lang) return false;
+       
+       // Extract main language code (e.g., 'ar' from 'ar-SA')
+       const mainLang = lang.split('-')[0].toLowerCase();
+       
+       return RTL_LANGUAGES.includes(mainLang);
+     }
+     
+     /**
+      * Apply RTL or LTR direction based on language
+      * @param {string} lang - Language code
+      */
+     function applyDirectionForLanguage(lang) {
+       const html = document.documentElement;
+       const isRTL = isRTLLanguage(lang);
+       
+       // Set direction attribute
+       html.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+       
+       // Update Bootstrap CSS for RTL if needed
+       const bootstrapLink = document.querySelector('link[href*="bootstrap"]');
+       if (bootstrapLink && isRTL) {
+         // Switch to Bootstrap RTL CSS
+         bootstrapLink.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.rtl.min.css';
+       } else if (bootstrapLink && !isRTL) {
+         // Switch back to Bootstrap LTR CSS
+         bootstrapLink.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css';
+       }
+       
+       // Log the change for debugging
+       console.log(`Language detected: ${lang}, Direction: ${isRTL ? 'RTL' : 'LTR'}`);
+     }
+     
+     /**
+      * MutationObserver to detect language attribute changes
+      * This catches changes made by Google Translate and other translation tools
+      */
+     const observer = new MutationObserver(function(mutations) {
+       mutations.forEach(function(mutation) {
+         if (mutation.type === 'attributes' && mutation.attributeName === 'lang') {
+           const newLang = document.documentElement.getAttribute('lang');
+           applyDirectionForLanguage(newLang);
+         }
+       });
+     });
+     
+     // Start observing the <html> element for attribute changes
+     observer.observe(document.documentElement, {
+       attributes: true,
+       attributeFilter: ['lang']
+     });
+     
+     // Also detect initial language on page load
+     window.addEventListener('DOMContentLoaded', function() {
+       const initialLang = document.documentElement.getAttribute('lang');
+       applyDirectionForLanguage(initialLang);
+       
+       // Check for Google Translate widget
+       // Google Translate adds a class to the html element
+       const checkTranslate = setInterval(function() {
+         const html = document.documentElement;
+         if (html.classList.contains('translated-ltr') || 
+             html.classList.contains('translated-rtl')) {
+           const currentLang = html.getAttribute('lang');
+           applyDirectionForLanguage(currentLang);
+           clearInterval(checkTranslate);
+         }
+       }, 500);
+       
+       // Stop checking after 10 seconds
+       setTimeout(function() {
+         clearInterval(checkTranslate);
+       }, 10000);
+     });
+     
+     /**
+      * Optional: Detect browser language and apply direction
+      * Uncomment to auto-detect based on user's browser settings
+      */
+     /*
+     const browserLang = navigator.language || navigator.userLanguage;
+     if (browserLang && !document.documentElement.getAttribute('lang')) {
+       document.documentElement.setAttribute('lang', browserLang);
+       applyDirectionForLanguage(browserLang);
+     }
+     */
+   </script>
 </body>
 </html>

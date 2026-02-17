@@ -8,6 +8,15 @@ body {
     padding: 0;
 }
 
+/* Support RTL and LTR layouts */
+[dir="rtl"] {
+    text-align: right;
+}
+
+[dir="ltr"] {
+    text-align: left;
+}
+
 /* ===========================
    Hero Section / Header
    =========================== */
@@ -140,12 +149,211 @@ header p {
 }
 
 /* ===========================
+   Bootstrap Carousel Section
+   =========================== */
+/* Interactive carousel showcasing sustainability highlights */
+.carousel-section {
+    /* Light background for better contrast with blue header */
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    
+    /* Minimal padding for compact height */
+    padding: 20px 20px;
+    
+    /* Full width */
+    width: 100%;
+    
+    /* Margin below */
+    margin-bottom: 30px;
+    
+    /* Border top for separation */
+    border-top: 3px solid #0071C5;
+}
+
+/* Carousel content container */
+.carousel-content {
+    /* Center content */
+    text-align: center;
+    
+    /* Minimal padding */
+    padding: 15px 20px;
+    
+    /* Max width for readability */
+    max-width: 800px;
+    margin: 0 auto;
+    
+    /* Very compact minimum height */
+    min-height: 100px;
+    
+    /* Flex layout for vertical centering */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Carousel icon */
+.carousel-icon {
+    /* Compact icon size */
+    font-size: 40px;
+    
+    /* Intel blue color */
+    color: #0071C5;
+    
+    /* Minimal space below */
+    margin-bottom: 10px;
+    
+    /* Animation */
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Floating animation for icons */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Carousel heading */
+.carousel-content h3 {
+    /* Dark text for high contrast */
+    color: #042a44;
+    
+    /* Compact font */
+    font-size: 24px;
+    
+    /* Bold text */
+    font-weight: bold;
+    
+    /* Minimal space below */
+    margin-bottom: 10px;
+    
+    /* Letter spacing */
+    letter-spacing: 0.5px;
+}
+
+/* Carousel paragraph */
+.carousel-content p {
+    /* Dark grey text for readability */
+    color: #495057;
+    
+    /* Smaller font */
+    font-size: 14px;
+    
+    /* Compact line height */
+    line-height: 1.4;
+    
+    /* Max width */
+    max-width: 600px;
+    
+    /* Remove extra margin */
+    margin: 0;
+}
+
+/* Carousel indicators (dots) */
+.carousel-indicators button {
+    /* Size */
+    width: 12px;
+    height: 12px;
+    
+    /* Make them round */
+    border-radius: 50%;
+    
+    /* Dark background for visibility on light carousel */
+    background-color: rgba(0, 113, 197, 0.3);
+    
+    /* Border */
+    border: 2px solid transparent;
+    
+    /* Transition */
+    transition: all 0.3s ease;
+}
+
+/* Active indicator */
+.carousel-indicators .active {
+    /* Intel blue */
+    background-color: #0071C5;
+    
+    /* Darker blue border */
+    border-color: #004282;
+    
+    /* Slightly larger */
+    transform: scale(1.2);
+}
+
+/* Carousel controls (arrows) */
+.carousel-control-prev,
+.carousel-control-next {
+    /* Width */
+    width: 5%;
+    
+    /* Opacity */
+    opacity: 0.7;
+    
+    /* Transition */
+    transition: opacity 0.3s ease;
+}
+
+/* Hover state for controls */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+}
+
+/* Carousel control icons */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    /* Size */
+    width: 3rem;
+    height: 3rem;
+    
+    /* Dark background for visibility on light carousel */
+    background-color: rgba(0, 113, 197, 0.8);
+    
+    /* Rounded */
+    border-radius: 50%;
+    
+    /* Padding */
+    padding: 10px;
+    
+    /* Border */
+    border: 2px solid #0071C5;
+}
+
+/* Responsive carousel - smaller on mobile */
+@media (max-width: 768px) {
+    .carousel-content h3 {
+        font-size: 20px;
+    }
+    
+    .carousel-content p {
+        font-size: 13px;
+    }
+    
+    .carousel-icon {
+        font-size: 35px;
+    }
+    
+    .carousel-content {
+        min-height: 90px;
+        padding: 15px 10px;
+    }
+    
+    .carousel-section {
+        padding: 15px 15px;
+    }
+}
+
+/* ===========================
    Timeline / Milestones (Simple & Readable)
    =========================== */
 /* Clear, beginner-friendly styles with good contrast, margins and borders.
    - On large screens the timeline scrolls horizontally so you can swipe/scroll
      to see more milestone cards.
    - On small screens cards stack vertically for easy reading.
+   - Works with both LTR (left-to-right) and RTL (right-to-left) layouts.
    Tips:
    - Each card uses a white background and dark text for best contrast.
    - Use the horizontal scrollbar to move right and see more cards. */
@@ -163,6 +371,11 @@ section {
     scroll-snap-type: x mandatory; /* snap horizontally with required snapping */
     scroll-behavior: smooth; /* smooth scrolling animation */
     scroll-padding: 24px; /* padding from edge when snapping */
+}
+
+/* RTL support: timeline cards flow from right to left */
+[dir="rtl"] section {
+    direction: rtl;
 }
 
 /* Simple, visible scrollbar styling (optional) */
@@ -284,11 +497,401 @@ section > div:focus {
    outline-offset: 6px;
 }
 
+/* ===========================
+   Info Grid Section (3 Columns)
+   =========================== */
+/* This section displays 3 sustainability goals in a grid layout.
+   Bootstrap handles the column layout, we just style the cards. */
+
+/* Style for each info card in the grid */
+.info-card {
+    /* Background color: light blue to match Intel's brand */
+    background-color: #e8f4ff;
+    
+    /* Border: add a subtle border for definition */
+    border: 2px solid #0071C5;
+    
+    /* Rounded corners for a modern look */
+    border-radius: 12px;
+    
+    /* Add a subtle shadow for depth */
+    box-shadow: 0 4px 12px rgba(0, 113, 197, 0.15);
+    
+    /* Set minimum height so all cards are same size */
+    min-height: 200px;
+    
+    /* Add smooth transition for hover effects */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect: lift the card and increase shadow */
+.info-card:hover {
+    /* Move the card up slightly */
+    transform: translateY(-8px);
+    
+    /* Make shadow more prominent */
+    box-shadow: 0 8px 20px rgba(0, 113, 197, 0.25);
+}
+
+/* Style the headings inside info cards */
+.info-card h3 {
+    /* Intel blue color */
+    color: #0071C5;
+    
+    /* Make text bold */
+    font-weight: bold;
+    
+    /* Add space below */
+    margin-bottom: 15px;
+    
+    /* Larger font size */
+    font-size: 22px;
+}
+
+/* Style icons inside headings */
+.info-card h3 i {
+    /* Add space to the right of icon */
+    margin-right: 10px;
+    
+    /* Make icon slightly larger */
+    font-size: 26px;
+    
+    /* Align icon properly with text */
+    vertical-align: middle;
+    
+    /* Add smooth transition for hover effects */
+    transition: transform 0.3s ease;
+}
+
+/* RTL support for icons in headings */
+[dir="rtl"] .info-card h3 i {
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+/* Rotate/scale icon when card is hovered */
+.info-card:hover h3 i {
+    /* Slight rotation and scale for playful effect */
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Style the paragraphs inside info cards */
+.info-card p {
+    /* Dark text for good readability */
+    color: #042a44;
+    
+    /* Add line height for easier reading */
+    line-height: 1.6;
+    
+    /* Slightly larger font */
+    font-size: 15px;
+    
+    /* Add margin below paragraph */
+    margin-bottom: 15px;
+}
+
+/* Style Bootstrap buttons inside info cards */
+.info-card .btn {
+    /* Background color: Intel blue */
+    background-color: #0071C5;
+    
+    /* Border color to match */
+    border-color: #0071C5;
+    
+    /* White text */
+    color: white;
+    
+    /* Add padding for better size */
+    padding: 8px 20px;
+    
+    /* Remove text decoration */
+    text-decoration: none;
+    
+    /* Add smooth transition */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect for buttons */
+.info-card .btn:hover {
+    /* Darker blue on hover */
+    background-color: #005fa8;
+    border-color: #005fa8;
+    
+    /* Slight lift effect */
+    transform: translateY(-2px);
+}
+
+/* ===========================
+   Newsletter Section
+   =========================== */
+/* Newsletter section styling */
+.newsletter-section {
+    /* Background: light gradient */
+    background: linear-gradient(135deg, #e8f4ff 0%, #d0e8ff 100%);
+    
+    /* Padding around content */
+    padding: 60px 20px;
+    
+    /* Center text */
+    text-align: center;
+    
+    /* Remove flex display from timeline section */
+    display: block;
+    
+    /* Remove horizontal scroll */
+    overflow-x: visible;
+}
+
+/* Newsletter heading */
+.newsletter-section h2 {
+    /* Intel blue color */
+    color: #0071C5;
+    
+    /* Larger font */
+    font-size: 32px;
+    
+    /* Bold text */
+    font-weight: bold;
+    
+    /* Space below */
+    margin-bottom: 15px;
+}
+
+/* Newsletter description */
+.newsletter-section p {
+    /* Dark text */
+    color: #042a44;
+    
+    /* Space below */
+    margin-bottom: 30px;
+    
+    /* Larger font */
+    font-size: 16px;
+}
+
+/* Newsletter form input field */
+.newsletter-form input {
+    /* Larger padding for better appearance */
+    padding: 12px 20px;
+    
+    /* Larger font */
+    font-size: 16px;
+    
+    /* Rounded corners */
+    border-radius: 8px;
+    
+    /* Border color */
+    border: 2px solid #0071C5;
+}
+
+/* Newsletter form button */
+.newsletter-form button {
+    /* Background: Intel blue */
+    background-color: #0071C5;
+    
+    /* Border to match */
+    border-color: #0071C5;
+    
+    /* Padding for size */
+    padding: 12px 40px;
+    
+    /* Larger font */
+    font-size: 16px;
+    
+    /* Bold text */
+    font-weight: bold;
+    
+    /* Rounded corners */
+    border-radius: 8px;
+    
+    /* Smooth transition */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Newsletter button hover */
+.newsletter-form button:hover {
+    /* Darker blue */
+    background-color: #005fa8;
+    border-color: #005fa8;
+    
+    /* Lift effect */
+    transform: translateY(-2px);
+}
+
+/* ===========================
+   Footer Section
+   =========================== */
+/* Professional footer with navigation and copyright */
 footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #004282;
-  color: white;
+  /* Dark background for contrast */
+  background-color: #002b5c;
+  
+  /* White text for high contrast (WCAG AA compliant) */
+  color: #ffffff;
+  
+  /* Padding for spacing */
+  padding: 40px 20px 20px;
+  
+  /* Space above footer */
+  margin-top: 60px;
+}
+
+/* Footer navigation list */
+footer nav ul {
+  /* Remove default list styling */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+  /* Flexbox for horizontal layout */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Footer list items */
+footer nav li {
+  /* Inline display */
+  display: inline-block;
+}
+
+/* Footer links */
+footer nav a {
+  /* White text */
+  color: #ffffff;
+  
+  /* Remove underline */
+  text-decoration: none;
+  
+  /* Smooth transition */
+  transition: color 0.3s ease, transform 0.2s ease;
+  
+  /* Inline-block for transform */
+  display: inline-block;
+  
+  /* Font size */
+  font-size: 16px;
+}
+
+/* Footer link hover - better contrast */
+footer nav a:hover,
+footer nav a:focus {
+  /* Light blue for visibility */
+  color: #90d4ff;
+  
+  /* Underline on hover for clarity */
+  text-decoration: underline;
+  
+  /* Slight lift */
+  transform: translateY(-2px);
+}
+
+/* Footer link focus - keyboard accessibility */
+footer nav a:focus {
+  /* Outline for keyboard users */
+  outline: 3px solid #90d4ff;
+  outline-offset: 4px;
+}
+
+/* Footer copyright section */
+.footer-copyright {
+  /* Align text to right on larger screens */
+  text-align: right;
+}
+
+/* RTL support for footer copyright */
+[dir="rtl"] .footer-copyright {
+  text-align: left;
+}
+
+/* Footer copyright text */
+.footer-copyright p {
+  /* Margin below */
+  margin-bottom: 10px;
+  
+  /* Font size */
+  font-size: 15px;
+  
+  /* Line height */
+  line-height: 1.6;
+}
+
+/* Footer note - smaller text */
+.footer-note {
+  /* Smaller font */
+  font-size: 13px;
+  
+  /* Light grey for secondary info */
+  color: #b8d8ff;
+  
+  /* Italic style */
+  font-style: italic;
+}
+
+/* Footer helper text */
+.footer-help {
+  /* Border above for separation */
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  
+  /* Padding above */
+  padding-top: 20px;
+}
+
+.footer-help p {
+  /* Light grey */
+  color: #b8d8ff;
+  
+  /* Remove margin */
+  margin: 0;
+}
+
+/* Visually hidden class for screen readers only */
+.visually-hidden {
+  /* Position absolute */
+  position: absolute;
+  
+  /* Tiny size */
+  width: 1px;
+  height: 1px;
+  
+  /* Hide overflow */
+  overflow: hidden;
+  
+  /* Clip content */
+  clip: rect(0, 0, 0, 0);
+  
+  /* No border */
+  border: 0;
+  
+  /* Hidden from view but accessible to screen readers */
+  white-space: nowrap;
+}
+
+/* Responsive footer - stack on mobile */
+@media (max-width: 768px) {
+  footer nav ul {
+    /* Vertical stack on mobile */
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .footer-copyright {
+    /* Left align on mobile for LTR */
+    text-align: left;
+    
+    /* Space above */
+    margin-top: 30px;
+  }
+  
+  /* RTL: Right align on mobile */
+  [dir="rtl"] .footer-copyright {
+    text-align: right;
+  }
+  
+  .footer-links {
+    /* Space below */
+    margin-bottom: 20px;
+  }
 }
 
 /* Small screens: stack cards vertically, easier to read and scroll naturally */
